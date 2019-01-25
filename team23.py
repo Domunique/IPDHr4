@@ -7,14 +7,14 @@
 ####
 
 team_name = 'Dominik Rettingers Team' # Only 10 chars displayed.
-strategy_name = 'Colude twice then Betray'
-strategy_description = 'Collude, Collude, Betray.' 
+strategy_name = 'Betray twice then Colude'
+strategy_description = 'Betray, Betray, Colude.' 
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
-    Collude for two turns then betray on the third turn.
+    Betray for two turns then colude on the third turn.
     Returns 'c' for two turns then returns 'b'. 
     '''
 
@@ -27,11 +27,11 @@ def move(my_history, their_history, my_score, their_score):
     # Decide whether to return 'c' or 'b'.
     
     if len(my_history)%3==0:
-         return 'c'
+         return 'b'
     elif len(my_history)%3==2:
-        return 'c'
-    else:
         return 'b'
+    else:
+        return 'c'
         
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
